@@ -1,0 +1,19 @@
+.card-div {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+    font-size: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px 0px rgba(0,0,0,0.30);
+}
+.card-div > img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+   
+}
