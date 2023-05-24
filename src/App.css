@@ -1,27 +1,30 @@
+
 .main-div {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   align-items: center;
+  background-color: rgb(245,197,24);
+  position: relative;
 }
 .input-div{
   display: flex;
-  width: 50%;
+  width: 70%;
   height: 250px;
   align-items: center;
   justify-content: center;
+  gap: 50px;
 }
 .input {
-
-  width: 100%;
+  width: 400px;
   height: 36px;
   border-radius: 4px;
   padding-left: 12px;
   font-size: 14px;
   font-weight: normal;
-  border: 1px solid rgb(137, 151, 155);
+  border: 1px solid black;
   transition: border-color 150ms ease-in-out 0s;
   outline: none;
   color: rgb(33, 49, 60);
@@ -29,24 +32,63 @@
   padding-right: 12px;
 }
   .input:hover{
-      box-shadow: rgb(231 238 236) 0px 0px 0px 3px;
+      box-shadow: black 0px 0px 0px 2px;
   }
 .in-theaters{
   display: flex;
   height:400px; 
-  width: 100%;
-  border: 1px solid blue;
-  /* justify-content: space-around; */
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
+  width: 90%;
+  border: 3px solid black;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+  margin-top: 40px;
 
+}
+.in-theaters > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 250px;
+  box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 20px;
 }
 .in-theaters-flex-div{
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  gap: 40px;
+  padding: 0;
+  
+
 }
+.search-button {
+  
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid black;
+  color: #fff;
+  background-color: #ff4742;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 16px;
+  height: 42px;
+  width: 200px;
+}
+
+  .search-button:hover{
+      background: 0 0;
+      color: black;
+  }
+  

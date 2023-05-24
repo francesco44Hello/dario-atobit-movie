@@ -1,0 +1,14 @@
+.ato-header {
+    display: flex;
+    height: 100px;
+    border: 1px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.ato-logo{
+    height: 90px;
+    
+}

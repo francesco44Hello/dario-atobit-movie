@@ -1,0 +1,40 @@
+.card-div {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 250px;
+    min-width: 250px;
+    font-size: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px 0px rgba(0,0,0,0.30);
+  margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+}
+.card-div > img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+   
+}
+.card-div > h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+.text-div > p {
+     min-width: 100%;
+    max-width: 100%;
+    min-height: 60%;
+    padding: 0%;
+    margin: 0;
+    white-space: normal;
+}
+.text-div {
+    height: 40%;
+    width: 100%;
+    /* background-color: red; */
+}
