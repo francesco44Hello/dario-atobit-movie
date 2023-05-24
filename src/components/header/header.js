@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="ato-header">
       <div className="ato-logo-container">
-        <a href="fefe" target="_blank">
+        <a href="https://atomovies.vercel.app/">
           <img
             alt="logo"
             src="https://i.ibb.co/gDfXHfG/Logo-atomovies.png"

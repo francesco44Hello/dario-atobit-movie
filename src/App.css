@@ -55,6 +55,7 @@
   font-size: 30px;
   font-weight: 800;
   margin-top: 20px;
+  border-radius: 10px;
 }
 .in-theaters-flex-div{
   display: flex;
