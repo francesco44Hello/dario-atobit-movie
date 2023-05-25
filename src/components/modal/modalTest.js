@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./modal.css";
 
-function Example({ image, title, cast, text,id  }) {
+function ModalComponent({ image, title, cast, text, id }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = (breakpoint) => {
@@ -29,7 +29,6 @@ function Example({ image, title, cast, text,id  }) {
         <img alt={title} src={image} height={100} width={100} />
         <div className="text-div">
           <p>{cast}</p>
-          
         </div>
       </button>
 
@@ -44,16 +43,28 @@ function Example({ image, title, cast, text,id  }) {
         </Modal.Header>
         <Modal.Body centered="true">
           <div className="plot-cast-div">
-          <p><strong>Cast: </strong><br></br>{cast}</p>
-          <p><strong>Plot: </strong><br></br>{text}</p>
+            <p>
+              <strong>Cast: </strong>
+              <br></br>
+              {cast}
+            </p>
+            <p>
+              <strong>Plot: </strong>
+              <br></br>
+              {text}
+            </p>
           </div>
-         
+
           <div className="modal-image">
             <img src={image} alt={cast}></img>
           </div>
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor: 'rgb(245,197,24)'}}>
-          <Button variant="secondary" onClick={handleClose} style={{backgroundColor: 'black'}}>
+        <Modal.Footer style={{ backgroundColor: "rgb(245,197,24)" }}>
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            style={{ backgroundColor: "black" }}
+          >
             Close
           </Button>
         </Modal.Footer>
@@ -62,4 +73,4 @@ function Example({ image, title, cast, text,id  }) {
   );
 }
 
-export default Example;
+export default ModalComponent;

@@ -1,68 +1,72 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import './components/movieCard/movideCard.css'
-import Example from "./components/modal/modalTest";
+import "./components/modal/movideCard.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-
+import ModalComponent from "./components/modal/modalTest";
 
 function App() {
-  const [dataFetch, setDataFetch] = useState([]);
-  const [dataSoon, setDataSoon] = useState([]);
-  const [searchData, setSearchData] = useState([]);
+  /**Stored data from API in three states to maipulate them */
+
+  const [inTheatersData, setinTheatersData] = useState([]);
+  const [comingSoonData, setcomingSoonData] = useState([]);
+  const [searchedData, setsearchedData] = useState([]);
+
+  /**Stored user input to then call the searchedData fetch*/
   const [userInput, setUserInput] = useState("");
+  /** State to make conditianl rendering of component */
   const [showSearchResults, setShowSearchResults] = useState(false);
 
   const API_KEY = process.env.REACT_APP_API_KEY;
-
+  /**Function to get user input */
   function handleChange(e) {
     setUserInput(e.target.value);
   }
-
+  /**Function to fire fetch with User Input */
   function handleClick() {
     setUserInput("");
-    fetchData(userInput);
+    fetchSearchedData(userInput);
   }
-
+  /** Same as above but when user press 'Enter' key */
   function handleKeyDown(e) {
     if (e.key === "Enter") {
-      fetchData(userInput);
+      fetchSearchedData(userInput);
       setUserInput("");
     }
   }
-
+  /**Changing title name */
   useEffect(() => {
     document.title = "AtoMovies";
   }, []);
-
+  /**Fetching data */
   useEffect(() => {
-    async function getData() {
+    async function getInTheatersData() {
       let response = await fetch(
         `https://imdb-api.com/en/API/InTheaters/${API_KEY}`
       );
       let data = await response.json();
-      setDataFetch(data.items);
+      setinTheatersData(data.items);
     }
-    getData();
+    getInTheatersData();
   }, []);
-
+  /**Fetching data */
   useEffect(() => {
-    async function getDataSoon() {
+    async function getComingSoonData() {
       let response = await fetch(
         `https://imdb-api.com/en/API/ComingSoon/${API_KEY}`
       );
       let data = await response.json();
-      setDataSoon(data.items);
+      setcomingSoonData(data.items);
     }
-    getDataSoon();
+    getComingSoonData();
   }, []);
-  async function fetchData() {
-
+  /**Fetching data */
+  async function fetchSearchedData() {
     let response = await fetch(
       `https://imdb-api.com/en/API/SearchMovie/${API_KEY}/${userInput}`
     );
     let data = await response.json();
-    setSearchData(data.results);
+    setsearchedData(data.results);
 
     setShowSearchResults(true);
   }
@@ -70,7 +74,7 @@ function App() {
   return (
     <>
       <div className="main-div">
-      <Header />
+        <Header />
         <div className="input-div">
           <input
             className="input"
@@ -86,14 +90,15 @@ function App() {
           <div className="in-theaters">
             <h1>Your results: </h1>
             <div className="in-theaters-flex-div">
-              {searchData.slice(0, 10).map((movie) => {
+              {/* Mapping through api and return a Card/modal component for each result from 1 to 10 */}
+              {searchedData.slice(0, 10).map((movie) => {
                 return (
-                  <Example
+                  <ModalComponent
                     id={movie.id}
                     title={movie.title}
                     image={movie.image}
                     cast={movie.description}
-                  ></Example>
+                  ></ModalComponent>
                 );
               })}
             </div>
@@ -102,16 +107,16 @@ function App() {
         <div className="in-theaters">
           <h1>In theaters</h1>
           <div className="in-theaters-flex-div">
-            {dataFetch.slice(0, 10).map((movie) => {
+            {inTheatersData.slice(0, 10).map((movie) => {
               return (
                 <>
-                  <Example
+                  <ModalComponent
                     id={movie.id}
                     title={movie.title}
                     image={movie.image}
                     cast={movie.stars}
                     text={movie.plot}
-                  ></Example>
+                  ></ModalComponent>
                 </>
               );
             })}
@@ -120,20 +125,20 @@ function App() {
         <div className="in-theaters">
           <h1>Coming soon</h1>
           <div className="in-theaters-flex-div">
-            {dataSoon.slice(0, 10).map((movie) => {
+            {comingSoonData.slice(0, 10).map((movie) => {
               return (
-                  <Example
-                    id={movie.id}
-                    title={movie.title}
-                    image={movie.image}
-                    cast={movie.stars}
-                    text={movie.plot}
-                  ></Example>
+                <ModalComponent
+                  id={movie.id}
+                  title={movie.title}
+                  image={movie.image}
+                  cast={movie.stars}
+                  text={movie.plot}
+                ></ModalComponent>
               );
             })}
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
