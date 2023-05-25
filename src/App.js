@@ -3,6 +3,7 @@ import "./App.css";
 import './components/movieCard/movideCard.css'
 import Example from "./components/modal/modalTest";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 
 function App() {
@@ -55,7 +56,6 @@ function App() {
     }
     getDataSoon();
   }, []);
-console.log(dataSoon)
   async function fetchData() {
 
     let response = await fetch(
@@ -67,7 +67,6 @@ console.log(dataSoon)
     setShowSearchResults(true);
   }
 
-  // console.log(searchData);
   return (
     <>
       <div className="main-div">
@@ -134,6 +133,7 @@ console.log(dataSoon)
             })}
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

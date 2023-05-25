@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./modal.css";
 
-function Example({ image, title, cast, text  }) {
+function Example({ image, title, cast, text,id  }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = (breakpoint) => {
@@ -23,6 +23,7 @@ function Example({ image, title, cast, text  }) {
           border: "2px solid black",
           color: "black",
         }}
+        key={id}
       >
         <h1 style={{ whiteSpace: "normal" }}>{title}</h1>
         <img alt={title} src={image} height={100} width={100} />
