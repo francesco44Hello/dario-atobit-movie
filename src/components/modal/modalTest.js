@@ -12,18 +12,20 @@ function ModalComponent({ image, title, cast, text, id }) {
   };
   const [fullscreen, setFullscreen] = useState(true);
 
+  // Check if the plot is available or null
+  const isPlotAvailable = text !== null;
+  // console.log(id)
   return (
-    <>
+    <div key={id}> {/* Apply the key prop to a wrapping element */}
       <button
         variant="primary"
         onClick={handleShow}
         className="card-div"
         style={{
-          backgroundColor: "transparent",
+          backgroundColor: "#eeeeeeee",
           border: "2px solid black",
           color: "black",
         }}
-        key={id}
       >
         <h1 style={{ whiteSpace: "normal" }}>{title}</h1>
         <img alt={title} src={image} height={100} width={100} />
@@ -45,18 +47,22 @@ function ModalComponent({ image, title, cast, text, id }) {
           <div className="plot-cast-div">
             <p>
               <strong>Cast: </strong>
-              <br></br>
+              <br />
               {cast}
             </p>
-            <p>
-              <strong>Plot: </strong>
-              <br></br>
-              {text}
-            </p>
+            {isPlotAvailable ? (
+              <p>
+                <strong>Plot: </strong>
+                <br />
+                {text}
+              </p>
+            ) : (
+              <p>Plot not available for this title.</p>
+            )}
           </div>
 
           <div className="modal-image">
-            <img src={image} alt={cast}></img>
+            <img src={image} alt={cast} />
           </div>
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "rgb(245,197,24)" }}>
@@ -69,7 +75,7 @@ function ModalComponent({ image, title, cast, text, id }) {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 
