@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IMDB Movie Fetcher
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+IMDB Movie Fetcher is a web application that allows users to browse and search for movies using the IMDB API. The application provides three main features: upcoming movies, movies currently in theaters, and the ability to search for specific movies.
 
-### `npm start`
+The project is built using React and utilizes Bootstrap components for a responsive and visually appealing user interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Fetches upcoming movies: Displays a list of movies that will be released in the near future.
+- Fetches in theaters movies: Shows a list of movies currently playing in theaters.
+- Movie search: Enables users to search for specific movies by entering keywords.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository to your local machine using the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/your-username/IMDB-Movie-Fetcher.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   cd IMDB-Movie-Fetcher
+   ```
 
-### `npm run eject`
+3. Install the required dependencies using npm or yarn:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Obtain an API key from the IMDB API by creating an account on the [IMDB API website](https://www.imdb.com/interfaces/).
 
-## Learn More
+5. Create a new file named `.env` in the root directory of the project and add the following line, replacing `YOUR_API_KEY` with your actual API key:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   REACT_APP_API_KEY=YOUR_API_KEY
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Start the development server:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   or
 
-### Analyzing the Bundle Size
+   ```bash
+   yarn start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+7. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Upon opening the application, you will see the homepage with three tabs: "Upcoming Movies," "In Theaters," and "Search."
+- Click on the "Upcoming Movies" tab to view a list of upcoming movies.
+- Click on the "In Theaters" tab to see movies currently playing in theaters.
+- Navigate to the "Search" tab and enter keywords to search for specific movies.
+- Click on a movie card to view detailed information about the selected movie.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the [MIT License](LICENSE).
 
-### `npm run build` fails to minify
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The project uses the IMDB API to fetch movie data. Visit [IMDB API](https://www.imdb.com/interfaces/) for more information.
+- Bootstrap is utilized for its components, providing a responsive and visually appealing user interface.
+- Thanks to the React community for creating an amazing library and enabling the development of this project.
