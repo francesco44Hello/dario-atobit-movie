@@ -21,7 +21,7 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/your-username/IMDB-Movie-Fetcher.git
+   git clone https://github.com/francesco44Hello/dario-atobit-movie.git
    ```
 
 2. Navigate to the project directory:
@@ -67,8 +67,8 @@ To run this project locally, follow these steps:
 ## Usage
 
 - Upon opening the application, you will see the homepage with three tabs: "Upcoming Movies," "In Theaters," and "Search."
-- Click on the "Upcoming Movies" tab to view a list of upcoming movies.
-- Click on the "In Theaters" tab to see movies currently playing in theaters.
+- Scroll on the "Upcoming Movies" tab to view a list of upcoming movies.
+- Scrool on the "In Theaters" tab to see movies currently playing in theaters.
 - Navigate to the "Search" tab and enter keywords to search for specific movies.
 - Click on a movie card to view detailed information about the selected movie.
 
@@ -76,9 +76,6 @@ To run this project locally, follow these steps:
 
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
